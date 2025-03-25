@@ -1,1 +1,1 @@
-export { default } from "../guide/page";
+export { default } from "../guides/page";
