@@ -1,8 +1,10 @@
-import Link from "next/link"
-import { ArrowRight, Leaf, BarChart3, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import LanguageSwitcher from "@/components/language-switcher"
-import Image from "next/image"
+import Link from "next/link";
+import { ArrowRight, Leaf, BarChart3, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import LanguageSwitcher from "@/components/language-switcher";
+import Image from "next/image";
+
+import { Video } from "@/components/video";
 
 export default function Home() {
   return (
@@ -34,8 +36,8 @@ export default function Home() {
                 Empowering Rwandan Farmers with Digital Solutions
               </h1>
               <p className="text-xl text-muted-foreground">
-                Access real-time market information, agricultural best practices, and connect with a community of
-                farmers and experts.
+                Access real-time market information, agricultural best
+                practices, and connect with a community of farmers and experts.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/register">
@@ -44,20 +46,18 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link href="/about">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto"
+                  >
                     Learn More
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/placeholder.svg?height=800&width=1200"
-                alt="Rwandan farmers using mobile technology"
-                fill
-                className="object-cover"
-                priority
-              />
+            <div className="relative h-auto rounded-lg overflow-hidden shadow-xl">
+              <Video />
             </div>
           </div>
         </section>
@@ -68,7 +68,8 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Key Features</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                FarmConnect Rwanda provides essential tools to help farmers succeed in the digital age.
+                FarmConnect Rwanda provides essential tools to help farmers
+                succeed in the digital age.
               </p>
             </div>
 
@@ -79,7 +80,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Market Information</h3>
                 <p className="text-muted-foreground mb-4">
-                  Access real-time market prices, trends, and connect directly with buyers.
+                  Access real-time market prices, trends, and connect directly
+                  with buyers.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center">
@@ -103,7 +105,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Knowledge Repository</h3>
                 <p className="text-muted-foreground mb-4">
-                  Learn agricultural best practices, weather information, and crop management.
+                  Learn agricultural best practices, weather information, and
+                  crop management.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center">
@@ -127,7 +130,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Community Network</h3>
                 <p className="text-muted-foreground mb-4">
-                  Connect with other farmers and agricultural experts to share knowledge.
+                  Connect with other farmers and agricultural experts to share
+                  knowledge.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center">
@@ -154,19 +158,27 @@ export default function Home() {
             <div className="grid gap-8 md:grid-cols-4 text-center">
               <div>
                 <p className="text-4xl font-bold text-primary">70%</p>
-                <p className="text-muted-foreground">of Rwanda's workforce are smallholder farmers</p>
+                <p className="text-muted-foreground">
+                  of Rwanda's workforce are smallholder farmers
+                </p>
               </div>
               <div>
                 <p className="text-4xl font-bold text-primary">25%</p>
-                <p className="text-muted-foreground">projected income increase through market intelligence</p>
+                <p className="text-muted-foreground">
+                  projected income increase through market intelligence
+                </p>
               </div>
               <div>
                 <p className="text-4xl font-bold text-primary">3</p>
-                <p className="text-muted-foreground">provinces initially targeted (Southern, Eastern, Northern)</p>
+                <p className="text-muted-foreground">
+                  provinces initially targeted (Southern, Eastern, Northern)
+                </p>
               </div>
               <div>
                 <p className="text-4xl font-bold text-primary">30-40%</p>
-                <p className="text-muted-foreground">reduction in transaction costs through direct connections</p>
+                <p className="text-muted-foreground">
+                  reduction in transaction costs through direct connections
+                </p>
               </div>
             </div>
           </div>
@@ -176,10 +188,12 @@ export default function Home() {
         <section className="py-20">
           <div className="container">
             <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Join FarmConnect Rwanda Today</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Join FarmConnect Rwanda Today
+              </h2>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
-                Be part of the agricultural revolution in Rwanda. Connect with markets, access knowledge, and grow your
-                farming business.
+                Be part of the agricultural revolution in Rwanda. Connect with
+                markets, access knowledge, and grow your farming business.
               </p>
               <Link href="/register">
                 <Button size="lg" variant="secondary">
@@ -200,24 +214,34 @@ export default function Home() {
                 <span className="text-xl font-bold">FarmConnect Rwanda</span>
               </div>
               <p className="text-muted-foreground">
-                Empowering Rwandan farmers with digital solutions for market access and knowledge sharing.
+                Empowering Rwandan farmers with digital solutions for market
+                access and knowledge sharing.
               </p>
             </div>
             <div>
               <h3 className="font-bold mb-4">Features</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/market" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/market"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Market Information
                   </Link>
                 </li>
                 <li>
-                  <Link href="/knowledge" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/knowledge"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Knowledge Repository
                   </Link>
                 </li>
                 <li>
-                  <Link href="/community" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/community"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Community Network
                   </Link>
                 </li>
@@ -227,17 +251,26 @@ export default function Home() {
               <h3 className="font-bold mb-4">Resources</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/about"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/contact"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/faq"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     FAQ
                   </Link>
                 </li>
@@ -247,12 +280,18 @@ export default function Home() {
               <h3 className="font-bold mb-4">Legal</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/terms" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/terms"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/privacy"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
@@ -265,6 +304,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
