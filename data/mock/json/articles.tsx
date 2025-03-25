@@ -12,7 +12,14 @@ export interface Guide extends BaseArticle {
   tagline: string;
 }
 
-export type Article = Guide;
+export interface ExpertAdvice extends BaseArticle {
+  type: "advice";
+  crops: string[];
+  topics: string[];
+  author: string;
+}
+
+export type Article = Guide | ExpertAdvice;
 
 export const articles: Article[] = [
   {
@@ -68,5 +75,38 @@ export const articles: Article[] = [
     environment while maintaining or improving crop yields.`,
     crops: ["All Crops"],
     topics: ["Sustainability", "Conservation"],
+  },
+  {
+    type: "advice",
+    title: "Optimizing Maize Yields in Rwanda",
+    author: "Dr. Jean Mutesi, Agricultural Scientist",
+    description: `This comprehensive guide provides expert advice on maximizing
+    maize yields in Rwanda's unique climate conditions. Learn
+    about optimal planting densities, fertilizer application
+    rates, and timing for different regions.`,
+    crops: ["Maize"],
+    topics: ["Yield Optimization", "Fertilizer"],
+  },
+  {
+    type: "advice",
+    title: "Climate-Smart Agriculture for Rwandan Farmers",
+    author: "Prof. Emmanuel Nzeyimana, Climate Specialist",
+    description: `Learn how to adapt your farming practices to changing climate
+    conditions in Rwanda. This expert guide covers
+    drought-resistant varieties, water conservation techniques,
+    and sustainable farming methods.`,
+    crops: [],
+    topics: ["Climate Change", "Sustainability", "Water Management"],
+  },
+  {
+    type: "advice",
+    title: "Improving Coffee Quality for Premium Markets",
+    author: "Marie Uwimana, Coffee Specialist",
+    description: `Discover expert techniques for producing high-quality coffee
+    that can command premium prices in international markets. This
+    guide covers cultivation, harvesting, processing, and quality
+    control.`,
+    crops: ["Coffee"],
+    topics: ["Quality", "Export"],
   },
 ];
