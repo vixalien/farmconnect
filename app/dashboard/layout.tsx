@@ -83,9 +83,11 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                           key={item.name}
                           href={item.href}
                           className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium ${
-                            pathname === item.href
-                              ? "bg-primary/10 text-primary"
-                              : "text-muted-foreground hover:bg-muted"
+                            item.href.endsWith("dashboard")
+                              ? pathname === item.href
+                              : pathname.startsWith(item.href)
+                                ? "bg-primary/10 text-primary"
+                                : "text-muted-foreground hover:bg-muted"
                           }`}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -123,9 +125,11 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 key={item.name}
                 href={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === item.href
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:bg-muted"
+                  item.href.endsWith("dashboard")
+                    ? pathname === item.href
+                    : pathname.startsWith(item.href)
+                      ? "bg-primary/10 text-primary"
+                      : "text-muted-foreground hover:bg-muted"
                 }`}
               >
                 {item.name}
