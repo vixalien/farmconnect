@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   BarChart3,
   Bell,
@@ -20,34 +20,34 @@ import {
   User,
   Users,
   X,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import LanguageSwitcher from "@/components/language-switcher"
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import LanguageSwitcher from "@/components/language-switcher";
 
 interface DashboardLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
-  const pathname = usePathname()
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigation = [
     { name: "Dashboard", href: "/dashboard", icon: Home },
     { name: "Market", href: "/dashboard/market", icon: BarChart3 },
     { name: "Knowledge", href: "/dashboard/knowledge", icon: BookOpen },
     { name: "Community", href: "/dashboard/community", icon: Users },
-    { name: "Transactions", href: "/dashboard/transactions", icon: ShoppingCart },
-    { name: "Messages", href: "/dashboard/messages", icon: MessageSquare },
-  ]
+    // { name: "Transactions", href: "/dashboard/transactions", icon: ShoppingCart },
+    // { name: "Messages", href: "/dashboard/messages", icon: MessageSquare },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -68,7 +68,11 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                       <Leaf className="h-6 w-6 text-green-600" />
                       <span className="text-xl font-bold">FarmConnect</span>
                     </div>
-                    <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       <X className="h-5 w-5" />
                     </Button>
                   </div>
@@ -106,7 +110,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
             <Link href="/dashboard" className="flex items-center gap-2">
               <Leaf className="h-6 w-6 text-green-600" />
-              <span className="text-xl font-bold hidden md:inline">FarmConnect Rwanda</span>
+              <span className="text-xl font-bold hidden md:inline">
+                FarmConnect Rwanda
+              </span>
               <span className="text-xl font-bold md:hidden">FarmConnect</span>
             </Link>
           </div>
@@ -117,7 +123,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 key={item.name}
                 href={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === item.href ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted"
+                  pathname === item.href
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:bg-muted"
                 }`}
               >
                 {item.name}
@@ -135,7 +143,11 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center gap-2"
+                >
                   <User className="h-5 w-5" />
                   <span className="hidden md:inline">John Farmer</span>
                   <ChevronDown className="h-4 w-4" />
@@ -170,6 +182,5 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Main Content */}
       <main className="flex-1 bg-muted/30">{children}</main>
     </div>
-  )
+  );
 }
-
