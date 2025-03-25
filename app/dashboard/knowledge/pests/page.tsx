@@ -14,6 +14,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { pests } from "@/data/mock/json/pests";
+
 export default function Pests() {
   return (
     <Card>
@@ -55,104 +57,48 @@ export default function Pests() {
         </div>
 
         <div className="space-y-6">
-          <div className="border rounded-lg overflow-hidden">
-            <div className="bg-muted p-4">
-              <h3 className="font-medium">Fall Armyworm</h3>
-              <p className="text-sm text-muted-foreground">
-                Affects: Maize, Sorghum
-              </p>
-            </div>
-            <div className="p-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div>
-                  <h4 className="text-sm font-medium mb-2">Identification</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>
-                      • Caterpillars with light-colored inverted Y on head
-                    </li>
-                    <li>• Feeding damage in whorls and leaves</li>
-                    <li>• Ragged holes and frass (excrement) visible</li>
-                  </ul>
+          {pests.map((pest) => {
+            return (
+              <div
+                key={pest.name}
+                className="border rounded-lg overflow-hidden"
+              >
+                <div className="bg-muted p-4">
+                  <h3 className="font-medium">{pest.name}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Affects: {pest.crops.join(", ")}
+                  </p>
                 </div>
-                <div>
-                  <h4 className="text-sm font-medium mb-2">Management</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>• Early planting to avoid peak infestation periods</li>
-                    <li>• Regular field monitoring</li>
-                    <li>• Approved pesticides (follow local guidelines)</li>
-                    <li>• Natural enemies like parasitic wasps</li>
-                  </ul>
-                </div>
-              </div>
-              <Button variant="outline" className="mt-4 w-full md:w-auto">
-                View Detailed Guide
-              </Button>
-            </div>
-          </div>
-
-          <div className="border rounded-lg overflow-hidden">
-            <div className="bg-muted p-4">
-              <h3 className="font-medium">Bean Rust</h3>
-              <p className="text-sm text-muted-foreground">
-                Affects: Beans, Legumes
-              </p>
-            </div>
-            <div className="p-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div>
-                  <h4 className="text-sm font-medium mb-2">Identification</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>• Small, rusty-brown spots on leaves</li>
-                    <li>• Yellow halos around spots</li>
-                    <li>• Premature leaf drop</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium mb-2">Management</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>• Use resistant varieties</li>
-                    <li>• Crop rotation with non-host plants</li>
-                    <li>• Fungicide application (preventative)</li>
-                    <li>• Proper spacing for air circulation</li>
-                  </ul>
+                <div className="p-4">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <h4 className="text-sm font-medium mb-2">
+                        Identification
+                      </h4>
+                      <ul className="text-sm space-y-1">
+                        {pest.identification.map((identification) => {
+                          return (
+                            <li key={identification}>• {identification}</li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium mb-2">Management</h4>
+                      <ul className="text-sm space-y-1">
+                        {pest.management.map((management) => {
+                          return <li key={management}>• {management}</li>;
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                  <Button variant="outline" className="mt-4 w-full md:w-auto">
+                    View Detailed Guide
+                  </Button>
                 </div>
               </div>
-              <Button variant="outline" className="mt-4 w-full md:w-auto">
-                View Detailed Guide
-              </Button>
-            </div>
-          </div>
-
-          <div className="border rounded-lg overflow-hidden">
-            <div className="bg-muted p-4">
-              <h3 className="font-medium">Coffee Berry Borer</h3>
-              <p className="text-sm text-muted-foreground">Affects: Coffee</p>
-            </div>
-            <div className="p-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div>
-                  <h4 className="text-sm font-medium mb-2">Identification</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>• Small black beetles (1.5-2mm)</li>
-                    <li>• Small holes in coffee berries</li>
-                    <li>• Damaged beans with tunnels</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium mb-2">Management</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>• Regular harvesting of all ripe berries</li>
-                    <li>• Proper post-harvest sanitation</li>
-                    <li>• Biological control with Beauveria bassiana</li>
-                    <li>• Traps with alcohol attractants</li>
-                  </ul>
-                </div>
-              </div>
-              <Button variant="outline" className="mt-4 w-full md:w-auto">
-                View Detailed Guide
-              </Button>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         <div className="mt-6">
