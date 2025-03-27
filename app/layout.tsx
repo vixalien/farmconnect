@@ -4,6 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "FarmConnect Rwanda",
   description: "Comprehensive agricultural information platform",
+  icons: {
+    shortcut: "/favicon.svg",
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
