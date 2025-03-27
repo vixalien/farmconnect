@@ -16,6 +16,8 @@ npm install
 npm run dev
 ```
 
+3. Open the link logged in the terminal, by default, it is [http://localhost:3000]
+
 > Alternatively, you can also access the live version at: [https://farmconnect-liart.vercel.app]
 
 ## Tech Stack
